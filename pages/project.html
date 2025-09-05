@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project • Catalyst Wood</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <script src="/static/project.js"></script>
+</head>
+<body>
+  <div class="project-container">
+    <div id = "navigator">
+      <div style="margin-bottom:12px; display:inline"><a href="/">← Back to projects</a></div>
+      <div id="invoice_page_button" style="margin-bottom:12px; display:inline; float:right"><a href="/invoices">Used Invoices View →</a></div>
+    </div>
+    <div class="card">
+      <h2 id="title">Project</h2>
+      <p class="help">Edit name and budget items, then click Save.</p>
+      <div class="divider"></div>
+      <div class="help">Apply PDF (increments Received where materials match, e.g., "20 2x4x8")</div>
+      <form id="pdfForm" class="row" onsubmit="return false;">
+        <input id="pdfFile" type="file" accept="application/pdf" style="flex:1" />
+        <button id="applyPdfBtn" type="button" class="btn ghost small">Apply PDF</button>
+      </form>
+      <div id="pdfStatus" class="help"></div>
+      <form id="form">
+        <div class="row">
+          <input id="name" type="text" placeholder="Project name" style="flex:1" />
+        </div>
+        <div class="divider"></div>
+        <div class="help">Budget Items</div>
+        <div class="header-row">
+          <div class="sku-input">SKU</div>
+          <div class="col-material">Material</div>
+          <div class="col-qty">Budget</div>
+          <div class="col-received">Received</div>
+          <div class="col-remaining">Remaining</div>
+          <div class="col-total-price">Total Cost</div>
+          <div class="remove-row">Remove</div>
+        </div>
+        <div id="budgetRows" class="budget-rows"></div>
+        <div id = "total-price-row" class = "row">
+          <div id = "gap"></div>
+          <div id = "gap"></div>
+          <div id = "gap"></div>
+          <div id = "gap"></div>
+          <div id = "total-cost-title">Total:</div>
+          <input id = "total-cost" type="string" placeholder="$0" readonly/>
+        </div>
+       
+          
+        </div>
+        <div style="height:10px"></div>
+        <div class="row">
+          <button id="addRowBtn" type="button" class="btn ghost small">+ Add Item</button>
+          <div style="flex:1"></div>
+          <button type="submit" class="btn primary">Save</button>
+        </div>
+        <div id="status" class="help"></div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+

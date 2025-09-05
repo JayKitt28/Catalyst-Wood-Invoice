@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/static/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catalyst Wood Projects</title>
+  <script src="/static/dbFetches.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <div class="title">Catalyst Wood</div>
+        <div class="subtitle">Projects and lumber budgets</div>
+      </div>
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <button id="processInvoicesBtn" class="btn secondary" style="padding: 8px 16px;">Process Invoices</button>
+        <div class="badge">Local Only</div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Create New Project</h2>
+        <p class="help">Give your project a unique name. You can optionally add budget items now or later.</p>
+        <form id="createForm">
+          <div class="row">
+            <input id="projectName" type="text" placeholder="Project name (e.g., Lot 12 - Maple)" style="flex: 1" />
+          </div>
+          <div class="divider"></div>
+          <div class="help">Budget Items (Optional)</div>
+          <div id="budgetRows"></div>
+          <div class="spacer"></div>
+          <div class="row">
+            <button id="addRowBtn" type="button" class="btn secondary">+ Add Item</button>
+            <div style="flex:1"></div>
+            <button type="submit" class="btn primary">Create Project</button>
+          </div>
+          <div id="createStatus" class="help"></div>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Projects</h2>
+        <p class="help">Newest first. Budgets show total units per material.</p>
+        <div id="projectsList" class="projects-list"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
