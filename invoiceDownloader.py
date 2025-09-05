@@ -5,8 +5,8 @@ import traceback
 from pdf import apply_pdf_via_email
 
 host = "imap.gmail.com"
-username = "JayKitt19@gmail.com"
-password = "hicc qfxd rbgg inxe"
+username = os.environ.get('GMAIL_USERNAME', 'JayKitt19@gmail.com')
+password = os.environ.get('GMAIL_PASSWORD', 'hicc qfxd rbgg inxe')
 pdfFolder = "./invoicePDFs"
 
 def download_and_process_invoices(app):

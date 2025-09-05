@@ -2,6 +2,13 @@ import os
 from flask import Flask
 from sqlalchemy import text
 
+# Load environment variables from .env file (optional)
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    print("python-dotenv not installed, using system environment variables")
+
 from routes import register_routes
 from api import api_bp
 from models import db
