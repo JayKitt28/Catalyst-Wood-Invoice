@@ -62,4 +62,4 @@ async function generate_invoices_display(){
     document.getElementById("invoice_holder").innerHTML = html;
 }
 
-generate_invoices()
+generate_invoices_display()
